@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { format } from "date-fns";
 import "./App.css";
+import { API_URL } from "./config";
 
 const DEFAULT_VOICE = "ru-RU-SvetlanaNeural";
 
@@ -140,7 +141,6 @@ export default function App() {
   };
 
   // Base analysis
-  import { API_URL } from "./config";
   const handleAnalyze = async () => {
     if (!name.trim() || !dob) {
       alert("Введите имя и дату рождения");
