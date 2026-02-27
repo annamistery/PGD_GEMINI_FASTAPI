@@ -103,12 +103,18 @@ except Exception as e:
 # --- FastAPI app ---
 app = FastAPI(title="PGD Personality API (cleaned)")
 
+# Настройка CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://pgd-gemini-fastapi.onrender.com/"], # Позже здесь можно вписать URL вашего фронтенда
+    # Разрешаем запросы с вашего фронтенда
+    allow_origins=[
+        "https://pgd-gemini-fastapi.onrender.com",  # Ваш фронтенд на Render
+        "http://localhost:5173",                   # Для локальной разработки (Vite)
+        "http://127.0.0.1:5173"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Разрешаем все методы (GET, POST, OPTIONS и т.д.)
+    allow_headers=["*"],  # Разрешаем все заголовки
 )
 
 # --------------------
