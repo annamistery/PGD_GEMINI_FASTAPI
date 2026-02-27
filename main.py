@@ -105,7 +105,7 @@ app = FastAPI(title="PGD Personality API (cleaned)")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "*"],
+    allow_origins=["https://pgd-gemini-fastapi.onrender.com/"], # Позже здесь можно вписать URL вашего фронтенда
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
