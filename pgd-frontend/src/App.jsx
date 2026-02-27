@@ -27,7 +27,7 @@ export default function App() {
   const [attachments, setAttachments] = useState([]); // {id,name,file,previewUrl,text}
   const [linkInput, setLinkInput] = useState("");
   const [isUploading, setIsUploading] = useState(false);
-
+  const API_URL = import.meta.env.VITE_API_URL;
   // helpers
   const addAttachment = (file, previewUrl = null) => {
     const id = `${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
@@ -141,6 +141,7 @@ export default function App() {
   };
 
   // Base analysis
+  import { API_URL } from "./config";
   const handleAnalyze = async () => {
     if (!name.trim() || !dob) {
       alert("Введите имя и дату рождения");
@@ -156,6 +157,7 @@ export default function App() {
         dob: format(new Date(dob), "dd.MM.yyyy"),
         gender: gender === "Женский" ? "Ж" : "М",
       };
+
       setProgress(20);
       const resp = await axios.post(
         `${API_URL}/analyze_personality`,
