@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import "./App.css";
 
 const DEFAULT_VOICE = "ru-RU-SvetlanaNeural";
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://pgd-gemini-fastapi-back.onrender.com";
 
 export default function App() {
   const [name, setName] = useState("");
