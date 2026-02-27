@@ -3,7 +3,6 @@ import axios from "axios";
 import { format } from "date-fns";
 import "./App.css";
 
-const API_URL = "http://127.0.0.1:8000";
 const DEFAULT_VOICE = "ru-RU-SvetlanaNeural";
 
 export default function App() {
