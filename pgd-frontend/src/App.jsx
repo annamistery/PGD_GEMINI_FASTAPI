@@ -2,9 +2,9 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { format } from "date-fns";
 import "./App.css";
-import { API_URL } from "./config";
 
 const DEFAULT_VOICE = "ru-RU-SvetlanaNeural";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function App() {
   const [name, setName] = useState("");
@@ -27,7 +27,7 @@ export default function App() {
   const [attachments, setAttachments] = useState([]); // {id,name,file,previewUrl,text}
   const [linkInput, setLinkInput] = useState("");
   const [isUploading, setIsUploading] = useState(false);
-  const API_URL = import.meta.env.VITE_API_URL;
+
   // helpers
   const addAttachment = (file, previewUrl = null) => {
     const id = `${Date.now()}_${Math.random().toString(36).slice(2, 9)}`;
