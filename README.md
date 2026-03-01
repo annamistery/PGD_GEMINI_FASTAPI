@@ -78,7 +78,7 @@ pip install -r requirements.txt
 ```env
 GOOGLE_API_KEY=ваш_ключ_gemini
 LLM_PROVIDER=gemini
-GEMINI_MODEL=gemini-1.5-flash
+GEMINI_MODEL=gemini-2.5-pro
 
 ```
 
